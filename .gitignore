@@ -1,5 +1,7 @@
 bunny/
+delivery_area/
 *.tar.gz
+*.7z
 
 # Created by https://www.gitignore.io/api/python,jupyternotebooks
 # Edit at https://www.gitignore.io/?templates=python,jupyternotebooks

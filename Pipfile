@@ -14,6 +14,7 @@ jupyter = {extras = ["notebook"],version = "*"}
 matplotlib = "*"
 numpy = "*"
 open3d = "*"
+opencv-python = "*"
 plotly = "*"
 scipy = "*"
 
