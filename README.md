@@ -8,11 +8,22 @@
 
 ## Data
 
+### Requirements
+- wget
+- p7zip-full
+
+### `isotropic_error.ipynb`, `anisotropic_error.ipynb`
+
 ```terminal
-# for isotropic_error.ipynb and anisotropic_error.ipynb
+# http://graphics.stanford.edu/data/3Dscanrep/
 $ wget http://graphics.stanford.edu/pub/3Dscanrep/bunny.tar.gz
 $ tar xavf bunny.tar.gz
-# for fundamental_matrix.ipynb
+```
+
+### `fundamental_matrix.ipynb`
+
+```terminal
+# https://www.eth3d.net/datasets#low-res-many-view
 $ wget https://www.eth3d.net/data/delivery_area_rig_undistorted.7z
 $ 7z x *.7z
 ```
