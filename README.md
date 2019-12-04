@@ -3,7 +3,7 @@
 - https://www.kyoritsu-pub.co.jp/bookdetail/9784320113824
 
 ## Requirements
-- Python 3.6
+- Python 3.7
 - Pipenv
 
 ## Data
