@@ -3,7 +3,6 @@ from pathlib import Path
 
 import numpy as np  # type: ignore
 import open3d  # type: ignore
-import plotly.graph_objects as go  # type: ignore
 from scipy import linalg  # type: ignore
 from scipy.spatial.transform import Rotation  # type: ignore
 
@@ -11,38 +10,7 @@ from scipy.spatial.transform import Rotation  # type: ignore
 def load_point_cloud(path: Path) -> np.ndarray:
     assert path.is_absolute() and path.exists()
     ply = open3d.io.read_point_cloud(str(path))
-    return np.asarray(ply.points).T
-
-
-def plot_3d(points: np.ndarray) -> None:
-    assert len(points.shape) == 2
-    assert points.shape[0] == 3
-    fig = go.Figure()
-    fig.add_trace(
-        go.Scatter3d(x=points[0],
-                     y=points[1],
-                     z=points[2],
-                     mode='markers',
-                     marker=dict(size=1, color=points[2], colorscale='Viridis', opacity=0.5)))
-    fig.show()
-
-
-def plot_3d_multi(*points_arr: np.ndarray) -> None:
-    for points in points_arr:
-        assert len(points.shape) == 2
-        assert points.shape[0] == 3
-    fig = go.Figure()
-    for i, points in enumerate(points_arr):
-        fig.add_trace(
-            go.Scatter3d(
-                x=points[0],
-                y=points[1],
-                z=points[2],
-                mode='markers',
-                marker=dict(size=1, opacity=0.5),
-                name=str(i + 1),
-            ))
-    fig.show()
+    return np.asarray(ply.points)
 
 
 def eval_R_error(estimated_R: np.ndarray, ideal_R: np.ndarray) -> np.float_:
@@ -51,7 +19,8 @@ def eval_R_error(estimated_R: np.ndarray, ideal_R: np.ndarray) -> np.float_:
 
 
 def estimate_R_using_SVD(A: np.ndarray, A_prime: np.ndarray) -> np.ndarray:
-    N = A @ A_prime.T  # correlation matrix
+    assert A.shape[1] == A_prime.shape[1] == 3
+    N = A.T @ A_prime  # correlation matrix
     U, s, Vh = linalg.svd(N)
     V = Vh.T
     return V @ np.diag([1, 1, linalg.det(V @ U)]) @ U.T

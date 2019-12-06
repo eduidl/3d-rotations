@@ -10,12 +10,13 @@ mypy = "*"
 yapf = "*"
 
 [packages]
+itkwidgets = "*"
 jupyter = {extras = ["notebook"],version = "*"}
 matplotlib = "*"
 numpy = "*"
 open3d = "*"
 opencv-python = "*"
-plotly = "*"
+pillow = "*"
 scipy = "*"
 
 [requires]

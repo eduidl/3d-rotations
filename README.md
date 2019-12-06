@@ -32,7 +32,9 @@ $ 7z x *.7z
 
 ```terminal
 pipenv sync
-pipenv run jupyter notebook
+pipenv shell
+jupyter nbextension enable --py widgetsnbextension
+jupyter notebook
 ```
 
 ## 構成
