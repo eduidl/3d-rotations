@@ -31,7 +31,7 @@ def skew_matrix(v: np.ndarray) -> np.ndarray:
         [0, -v[2], v[1]],
         [v[2], 0, -v[0]],
         [-v[1], v[0], 0]
-    ])
+    ])  # yapf: disable
 
 
 def exponential_map(omega: np.ndarray) -> np.ndarray:
