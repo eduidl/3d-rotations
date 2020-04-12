@@ -4,7 +4,7 @@
 
 ## Requirements
 - Python 3.6
-- Pipenv
+- Poetry
 
 ## Data
 
@@ -31,8 +31,9 @@ $ 7z x *.7z
 ## Run
 
 ```terminal
-pipenv sync
-pipenv shell
+poetry env use python3.6
+poetry install
+poetry shell
 jupyter nbextension enable --py widgetsnbextension
 jupyter notebook
 ```

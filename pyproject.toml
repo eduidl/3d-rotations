@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "3d-rotations"
+version = "0.1.0"
+description = ""
+authors = ["Yuma Hiramatsu <yuma.hiramatsu@gmail.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+itkwidgets = "^0.26.1"
+jupyter = {extras = ["notebook"], version = "^1.0.0"}
+matplotlib = "^3.2.1"
+numpy = "^1.18.2"
+open3d = "^0.9.0"
+opencv-python = "^4.2.0"
+pillow = "^7.1.1"
+scipy = "^1.4.1"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.7.9"
+yapf = "^0.29.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
