@@ -14,7 +14,7 @@ def load_point_cloud(path: Path) -> np.ndarray:
 
 
 def eval_R_error(estimated_R: np.ndarray, ideal_R: np.ndarray) -> np.float_:
-    error_rot = Rotation.from_dcm(estimated_R @ ideal_R.T)
+    error_rot = Rotation.from_matrix(estimated_R @ ideal_R.T)
     return linalg.norm(error_rot.as_rotvec())
 
 

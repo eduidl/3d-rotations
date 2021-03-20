@@ -1,14 +1,17 @@
 # 3D Rotations
-- 金谷著「3次元回転―パラメータ計算とリー代数による最適化―」 の実装
+
+- 金谷著「3 次元回転―パラメータ計算とリー代数による最適化―」 の実装
 - https://www.kyoritsu-pub.co.jp/bookdetail/9784320113824
 
 ## Requirements
-- Python 3.6
+
+- Python 3.7
 - Poetry
 
 ## Data
 
 ### Requirements
+
 - wget
 - p7zip-full
 
@@ -31,7 +34,6 @@ $ 7z x *.7z
 ## Run
 
 ```terminal
-poetry env use python3.6
 poetry install
 poetry shell
 jupyter nbextension enable --py widgetsnbextension
@@ -40,8 +42,8 @@ jupyter notebook
 
 ## 構成
 
-|ファイル名|内容|書籍との対応
-|----------|----|------------
-|[notebooks/isotropic\_error.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/isotropic_error.ipynb)|等方性誤差を持つデータからの回転推定|第4章
-|[notebooks/anisotropic\_error.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/anisotropic_error.ipynb)|異方性誤差を持つデータからの回転推定|第5章＋6.6節
-|[notebooks/fundamental\_matrix.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/fundamental_matrix.ipynb)|基礎行列の推定|6.7節
+| ファイル名                                                                                                                  | 内容                                 | 書籍との対応     |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------- |
+| [notebooks/isotropic_error.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/isotropic_error.ipynb)       | 等方性誤差を持つデータからの回転推定 | 第 4 章          |
+| [notebooks/anisotropic_error.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/anisotropic_error.ipynb)   | 異方性誤差を持つデータからの回転推定 | 第 5 章＋ 6.6 節 |
+| [notebooks/fundamental_matrix.ipynb](https://github.com/eduidl/3d-rotations/blob/master/notebooks/fundamental_matrix.ipynb) | 基礎行列の推定                       | 6.7 節           |
